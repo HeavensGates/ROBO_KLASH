@@ -406,6 +406,8 @@ void mousePressed() {
     gameOver=false;
     hit=false;
     robos.clear();
+    roundCount=1;
+    killCount=0;
   }
 }
 // POINT/RECTANGLE
