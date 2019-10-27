@@ -22,10 +22,12 @@ class Bullets {
    fill(0);
    noStroke();
    if (!Direction){
-   rect(Pos,1450,45,30);
+   rect(Pos,1410,45,30);
+   rect(Pos,1490,45,30);
    }
    if (Direction){
-   rect(Pos+900,1450,45,30); 
+   rect(Pos+900,1410,45,30);
+   rect(Pos+900,1490,45,30);
    }
   }
   void Hit(){

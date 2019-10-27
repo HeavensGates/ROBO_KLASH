@@ -1,22 +1,5 @@
 class Environment {
-  float xCloud;
   Environment() {
-    xCloud=0;
-  }
-  void cloudMove() {
-    if (xCloud<2350) {
-      xCloud=xCloud+1;
-    } else {
-      xCloud=-2330;
-    }
-  }
-  void createEnvironment() {
-    clouds();
-    backGround();
-  }
-    void clouds() {
-    noStroke();
-    fill(255);
   }
   void backGround() {
     //right inner strut
