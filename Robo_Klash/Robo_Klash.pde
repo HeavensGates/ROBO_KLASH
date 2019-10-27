@@ -6,7 +6,7 @@ import processing.sound.*;
 SoundFile walk, shoot, drop, open ;
 SoundFile RoboDamage1, RoboDamage2, RoboDamage3, RoboDamage4, RoboDamage5, RoboDamage6, 
   RoboDamage7, RoboDamage8, RoboDamage9, RoboDamage10;
-boolean ballState, moveRight, moveLeft, Shooting, hit;
+boolean  moveRight, moveLeft, Shooting, hit;
 String round, kills;//used to display game stats
 int killCount=0;//counts each kill
 float sx=850;
@@ -27,7 +27,6 @@ boolean gameOver=false;
 
 void setup() {
   size(1920, 1000, P2D); 
-  ballState=true;//if true=walking if false=rolling
   smooth(8);//makes edges less blocky
   frameRate(120);//increased frame rate to make movement more smooth
   //initialising all sound files
@@ -70,8 +69,7 @@ void draw() {
     textSize(25);
     text("A/D to move left and right", 375, 325);
     text("Mouse button to fire a bullet", 375, 350);
-    text("1/2 to swap between ball modes", 375, 375);
-    text("If your mouse is either side of the hamster the gun will point in that direction", 375, 385, 420, 100);
+    text("If your mouse is either side of the hamster the gun will point in that direction", 375, 355, 420, 100);
     textSize(50);
     text("The Game:", 1150, 300);
     textSize(25);
@@ -93,7 +91,7 @@ void draw() {
     background(#00B9FA);
     environ.backGround();
     //spawn hamster
-    ham.ballChange();
+    ham.HamsterCreate();
     //calculate which directiont he gun needs to be
     if (mouseX<ham.getX()/2+250) {
       ham.setGunDirection(false);
@@ -372,13 +370,6 @@ void keyPressed() {
     if (key =='A'||key=='a') {
       moveLeft=true;        
       walk.loop();
-    }
-    if (key=='1') {
-      ballState=true;
-      open.play();
-    }
-    if (key=='2') {
-      ballState=false;
     }
   }
 }

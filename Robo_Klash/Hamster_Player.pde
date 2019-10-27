@@ -36,30 +36,15 @@ class Hamster {
   void setGunDirection(boolean tempDir){
      GunDirection=tempDir; 
   }
-  void ballChange() {
+  void HamsterCreate() {
   pushMatrix();
   scale(0.5);
-  if (ballState==true) {
-    this.openBall();
-    this.setY(800);
-  } else if (ballState==false) {
-    this.closeBall();
-    if (this.getY()<900) {
-      this.dropDown();
-      if (this.getY()>899) {
-        drop.play();
-      }
-    }
-  } 
+    this.HamsterDraw();
+    this.setY(800); 
   popMatrix();
 }
 
-  void closeBall() {   
-    ellipseMode(CENTER);
-    ellipse(490+xMove, 750+yMove, 500, 500);
-    triangle(xMove+490,yMove+750,xMove+600,yMove+750,xMove+550,yMove+650);
-  }
-  void openBall() {
+  void HamsterDraw() {
     noStroke();
 
     //base face and outer ear
@@ -277,5 +262,5 @@ class Hamster {
     rect(25+xMove,680+yMove,50,50);
     
     }
-  }//end of Open Ball
+  }//end of Hamster Draw
 }
