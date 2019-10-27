@@ -53,7 +53,7 @@ void draw() {
   //main menu scene
   if (mainMenu) {
     background(110);
-    font=loadFont("Tahoma-Bold-48.vlw");
+    font=loadFont("Tahoma-200.vlw");
     textFont(font);
     textSize(100);
     fill(0);
@@ -236,9 +236,8 @@ void draw() {
           if (robo.getHP()==0) {
             robo.Kill();
             killCount++;
-          }
-          //plays different audio whenever a robot is struck
-          switch(int(random(10))) {
+            //plays different audio whenever a robot is killed
+            switch(int(random(10))) {
           case 0:
             RoboDamage1.play();
             break;
@@ -270,6 +269,9 @@ void draw() {
             RoboDamage10.play();
             break;
           }
+          }
+          
+          
         }
         if ((testBullets.getPos()>robo.getX()-700 ) && (!robo.getDir())) {
           testBullets.Hit();
@@ -278,38 +280,7 @@ void draw() {
             robo.Kill();
             killCount++;
           }
-          switch(int(random(10))) {
-          case 0:
-            RoboDamage1.play();
-            break;
-          case 1:
-            RoboDamage2.play();
-            break;
-          case 2:
-            RoboDamage3.play();
-            break;
-          case 3:
-            RoboDamage4.play();
-            break;
-          case 4:
-            RoboDamage5.play();
-            break;
-          case 5:
-            RoboDamage6.play();
-            break;
-          case 6:
-            RoboDamage7.play();
-            break;
-          case 7:
-            RoboDamage8.play();
-            break;
-          case 8:
-            RoboDamage9.play();
-            break;
-          case 9:
-            RoboDamage10.play();
-            break;
-          }
+          
         }
         if (!robo.isAlive()) {
           Shot.add(robo);
