@@ -2,7 +2,7 @@ class Bullets {
   float Pos;
   int Speed=25;
   boolean Hit=false; //true bullet hit, false not hit
-  boolean Direction;
+  boolean Direction;//true bullet goes right, false bullet goes left
   Bullets(float tempPos, boolean tempDir) {
     Pos=tempPos;
     Direction=tempDir;

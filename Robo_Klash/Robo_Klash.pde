@@ -321,6 +321,12 @@ void draw() {
           Shot.add(robo);
         }
       }
+      if ((testBullets.getPos()<0)&& (!testBullets.Direction)){
+        testBullets.Hit();
+      }
+      if ((testBullets.getPos()>1920+700)&& (testBullets.Direction)){
+        testBullets.Hit();
+      }
       if (testBullets.didHit()) {
         Collided.add(testBullets);
       } else {
@@ -334,6 +340,9 @@ void draw() {
     bullets.removeAll(Collided);
     robos.removeAll(Shot);
     round="Round: "+str(roundCount);
+    if (roundCount==0){
+      round="Round: 10";
+    }
     fill(0);
     textSize(40);
     text(round,870,390);
@@ -356,6 +365,8 @@ void draw() {
     fill(0);
     textSize(40);
     text("RESTART", 860, 660);
+    kills="Total Kills: "+str(killCount);
+    text(kills,800,550);
   }
   environ.foreGround();
 }//end of draw
