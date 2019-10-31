@@ -3,7 +3,7 @@
  */
 //Sound Files
 import processing.sound.*;
-SoundFile walk, shoot, drop, open ;
+SoundFile walk, shoot ;
 SoundFile RoboDamage1, RoboDamage2, RoboDamage3, RoboDamage4, RoboDamage5, RoboDamage6, 
   RoboDamage7, RoboDamage8, RoboDamage9, RoboDamage10;
 boolean  moveRight, moveLeft, Shooting, hit;
@@ -32,8 +32,6 @@ void setup() {
   //initialising all sound files
   walk=new SoundFile(this, "HamsterWalkLoop.mp3");
   shoot=new SoundFile(this, "BulletFired.mp3");
-  drop=new SoundFile(this, "HamsterDrop.mp3");
-  open=new SoundFile(this, "HamsterPopOut.mp3");
   RoboDamage1=new SoundFile(this, "Robo_Damage1.mp3");
   RoboDamage2=new SoundFile(this, "Robo_Damage2.mp3");
   RoboDamage3=new SoundFile(this, "Robo_Damage3.mp3");
@@ -279,6 +277,38 @@ void draw() {
           if (robo.getHP()==0) {
             robo.Kill();
             killCount++;
+            switch(int(random(10))) {
+          case 0:
+            RoboDamage1.play();
+            break;
+          case 1:
+            RoboDamage2.play();
+            break;
+          case 2:    
+            RoboDamage3.play();       
+            break;
+          case 3:       
+            RoboDamage4.play();   
+            break;
+          case 4:    
+            RoboDamage5.play();    
+            break;
+          case 5:     
+            RoboDamage6.play();     
+            break;
+          case 6:      
+            RoboDamage7.play();       
+            break;
+          case 7:       
+            RoboDamage8.play();         
+            break;
+          case 8:
+            RoboDamage9.play();
+            break;
+          case 9:
+            RoboDamage10.play();
+            break;
+          }
           }
           
         }
